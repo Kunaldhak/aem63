@@ -45,5 +45,5 @@ public class SimpleResourceListener implements EventHandler {
     public void handleEvent(final Event event) {
         logger.debug("Resource event: {} at: {}", event.getTopic(), event.getProperty(SlingConstants.PROPERTY_PATH));
     }
-}
+} 
 
