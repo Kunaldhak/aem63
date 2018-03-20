@@ -14,34 +14,46 @@
  *  limitations under the License.
  */
 package com.app.core.models;
-
 import javax.annotation.PostConstruct;
+
+import com.app.core.*;
+
 import javax.inject.Inject;
 import javax.inject.Named;
-
+ 
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
-import org.apache.sling.settings.SlingSettingsService;
 
+ 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+ 
 @Model(adaptables=Resource.class)
 public class HelloWorldModel {
-
-    @Inject
-    private SlingSettingsService settings;
-
+     
+     
+    protected final Logger log = LoggerFactory.getLogger(this.getClass());
+ 
     @Inject @Named("sling:resourceType") @Default(values="No resourceType")
     protected String resourceType;
-
+     
+    @Inject 
+    MySimpleService ms;
+ 
     private String message;
-
+ 
     @PostConstruct
     protected void init() {
+         
+        log.info("***** IN INIT") ; 
+         
+         
         message = "\tHello World!\n";
-        message += "\tThis is instance: " + settings.getSlingId() + "\n";
         message += "\tResource type is: " + resourceType + "\n";
+        message += "\tVALUE IS " + ms.getSimpleValue()+ "\n";
     }
-
+ 
     public String getMessage() {
         return message;
     }
