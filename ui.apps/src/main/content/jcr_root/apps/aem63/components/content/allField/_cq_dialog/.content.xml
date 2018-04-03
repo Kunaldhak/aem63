@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:nt="http://www.jcp.org/jcr/nt/1.0"
+    jcr:primaryType="nt:unstructured"
+    jcr:title="All Granite Field"
+    sling:resourceType="cq/gui/components/authoring/dialog">
+    <content
+        jcr:primaryType="nt:unstructured"
+        sling:resourceType="granite/ui/components/coral/foundation/container">
+        <items jcr:primaryType="nt:unstructured">
+            <tabs1
+                jcr:primaryType="nt:unstructured"
+                sling:resourceType="granite/ui/components/coral/foundation/tabs"
+                maximized="{Boolean}true">
+                <items jcr:primaryType="nt:unstructured">
+                    <fixed_columns
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic Tab 1"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}false">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <alert
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/alert"
+                                        fieldLabel="Alert : "
+                                        text="Here is Alert"/>
+                                </items>
+                            </column>
+                        </items>
+                    </fixed_columns>
+                    <fixed_columns2
+                        jcr:primaryType="nt:unstructured"
+                        jcr:title="Basic Tab 2"
+                        sling:resourceType="granite/ui/components/coral/foundation/fixedcolumns"
+                        margin="{Boolean}false">
+                        <items jcr:primaryType="nt:unstructured">
+                            <column
+                                jcr:primaryType="nt:unstructured"
+                                sling:resourceType="granite/ui/components/coral/foundation/container">
+                                <items jcr:primaryType="nt:unstructured">
+                                    <TextField
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textfield"
+                                        fieldLabel="Text Field "
+                                        name="./textfield"/>
+                                    <checkBox
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/checkbox"
+                                        defaultChecked="{Boolean}true"
+                                        name="./checkValue"
+                                        text="Click Check Box"
+                                        value="{Boolean}true"/>
+                                    <datePicker
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/datepicker"
+                                        displayedFormat="DD-MM-YYYY HH:mm"
+                                        fieldLabel="Datepicker : "
+                                        name="./datePicker"/>
+                                    <userPicker
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/userpicker"
+                                        fieldLabel="User Picker "
+                                        hideServiceUsers="{Boolean}true"
+                                        impersonatesOnly="{Boolean}false"
+                                        name=""/>
+                                </items>
+                            </column>
+                        </items>
+                    </fixed_columns2>
+                </items>
+            </tabs1>
+        </items>
+    </content>
+</jcr:root>

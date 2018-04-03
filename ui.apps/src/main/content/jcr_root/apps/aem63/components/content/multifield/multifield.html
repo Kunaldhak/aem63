@@ -1,0 +1,12 @@
+Here we are
+
+<sly data-sly-use.listUse="${'multifield.js' @ multifieldName='items1'}">  
+  <ul data-sly-list="${listUse}">  
+    <li><a href="${item.properties.linkUrl}">${item.properties.linkText}</a></li>  
+  </ul>  
+</sly>  
+<sly data-sly-use.listUse="${'listcollection.js' @ multifieldName='items2'}">  
+  <ul data-sly-list="${listUse}">  
+    <li><a href="${item.properties.linkUrl}">${item.properties.linkText}</a></li>  
+  </ul>  
+</sly>

@@ -38,8 +38,8 @@ public class HelloWorldModel {
     @Inject @Named("sling:resourceType") @Default(values="No resourceType")
     protected String resourceType;
      
-    @Inject 
-    MySimpleService ms;
+   // @Inject 
+   // MySimpleService ms;
  
     private String message;
  
@@ -51,7 +51,7 @@ public class HelloWorldModel {
          
         message = "\tHello World!\n";
         message += "\tResource type is: " + resourceType + "\n";
-        message += "\tVALUE IS " + ms.getSimpleValue()+ "\n";
+       // message += "\tVALUE IS " + ms.getSimpleValue()+ "\n";
     }
  
     public String getMessage() {
