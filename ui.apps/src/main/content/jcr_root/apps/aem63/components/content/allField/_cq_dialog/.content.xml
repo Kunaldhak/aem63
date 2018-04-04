@@ -27,6 +27,27 @@
                                         sling:resourceType="granite/ui/components/coral/foundation/alert"
                                         fieldLabel="Alert : "
                                         text="Here is Alert"/>
+                                    <selectField
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/select"
+                                        fieldLabel="List Items"
+                                        name="./listItems">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <list1
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Male"
+                                                value="male"/>
+                                            <list2
+                                                jcr:primaryType="nt:unstructured"
+                                                text="Female"
+                                                value="female"/>
+                                        </items>
+                                    </selectField>
+                                    <textArea
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/foundation/form/textarea"
+                                        fieldLabel="TextArea Field : "
+                                        name="./textArea"/>
                                 </items>
                             </column>
                         </items>
@@ -66,6 +87,23 @@
                                         hideServiceUsers="{Boolean}true"
                                         impersonatesOnly="{Boolean}false"
                                         name=""/>
+                                    <radioGroup
+                                        jcr:primaryType="nt:unstructured"
+                                        sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"
+                                        fieldLabel="Radio Group"
+                                        name="./radio"
+                                        vertical="{Boolean}true">
+                                        <items jcr:primaryType="nt:unstructured">
+                                            <op1
+                                                jcr:primaryType="nt:unstructured"
+                                                text="radio one"
+                                                value="radio1"/>
+                                            <op2
+                                                jcr:primaryType="nt:unstructured"
+                                                text="radio two"
+                                                value="radio2"/>
+                                        </items>
+                                    </radioGroup>
                                 </items>
                             </column>
                         </items>
