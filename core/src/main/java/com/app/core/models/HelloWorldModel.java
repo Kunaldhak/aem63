@@ -24,8 +24,7 @@ import javax.inject.Named;
 import org.apache.sling.api.resource.Resource;
 import org.apache.sling.models.annotations.Default;
 import org.apache.sling.models.annotations.Model;
-
- 
+import org.apache.sling.settings.SlingSettingsService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
  
@@ -40,6 +39,11 @@ public class HelloWorldModel {
      
    // @Inject 
    // MySimpleService ms;
+    @Inject
+    private SlingSettingsService settings;
+    
+    @Inject
+    PageCreateService ps;
  
     private String message;
  
@@ -51,7 +55,8 @@ public class HelloWorldModel {
          
         message = "\tHello World!\n";
         message += "\tResource type is: " + resourceType + "\n";
-       // message += "\tVALUE IS " + ms.getSimpleValue()+ "\n";
+        message += "\tThis is instance: " + settings.getSlingId() + "\n";
+        message += "\tNew Page name is: " + ps.CreatePage("AEM_PAGE") + "\n";
     }
  
     public String getMessage() {
