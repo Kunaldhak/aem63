@@ -86,7 +86,7 @@
                                         fieldLabel="User Picker "
                                         hideServiceUsers="{Boolean}true"
                                         impersonatesOnly="{Boolean}false"
-                                        name=""/>
+                                        name="./userpicker"/>
                                     <radioGroup
                                         jcr:primaryType="nt:unstructured"
                                         sling:resourceType="granite/ui/components/coral/foundation/form/radiogroup"

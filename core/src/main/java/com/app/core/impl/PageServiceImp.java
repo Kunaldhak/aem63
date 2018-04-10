@@ -38,7 +38,7 @@ public class PageServiceImp implements PageCreateService {
 
 		try {
 
-			// getting resourceResolver from ResourceResolverFactory
+			// getting resourceResolver from ResourceResolverFactory with help of system user
 
 			Map<String, Object> param = new HashMap<String, Object>();
 			param.put(ResourceResolverFactory.SUBSERVICE, "getResourceResolver");
@@ -54,6 +54,7 @@ public class PageServiceImp implements PageCreateService {
 			newPage = pageManager.create(pagePath, pageName, templatePath, pageTitle);
 			if (newPage != null) {
 				user = resolver.getUserID();
+				//user=session.getUserID();
 
 				Node newNode = newPage.adaptTo(Node.class);
 				Node cont = newNode.getNode("jcr:content");
@@ -61,8 +62,7 @@ public class PageServiceImp implements PageCreateService {
 					Node rootNode = session.getRootNode();
 					String path = rootNode.getPath();
 					Node parNode = JcrUtils.getNodeIfExists(cont, "par");
-					Node imageNode = JcrUtils.getOrCreateByPath(parNode.getPath() + "/image",
-							JcrConstants.NT_UNSTRUCTURED, session);
+					Node imageNode = JcrUtils.getOrCreateByPath(parNode.getPath() + "/image",JcrConstants.NT_UNSTRUCTURED, session);
 					Node textNode = JcrUtils.getNodeIfExists(parNode, "text");
 					imageNode.setProperty("sling:resourceType", "foundation/components/image");
 					imageNode.setProperty("fileReference", "/content/dam/we-retail-screens/we-retail-instore-logo.png");
