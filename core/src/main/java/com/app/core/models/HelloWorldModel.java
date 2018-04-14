@@ -42,8 +42,8 @@ public class HelloWorldModel {
     @Inject
     private SlingSettingsService settings;
     
-    @Inject
-    PageCreateService ps;
+   // @Inject
+    //PageCreateService ps;
  
     private String message;
  
@@ -52,11 +52,10 @@ public class HelloWorldModel {
          
         log.info("***** IN INIT") ; 
          
-         
         message = "\tHello World!\n";
         message += "\tResource type is: " + resourceType + "\n";
         message += "\tThis is instance: " + settings.getSlingId() + "\n";
-        message += "\tNew Page name is: " + ps.CreatePage("AEM_PAGE") + "\n";
+       // message += "\tNew Page name is: " + ps.CreatePage("AEM_PAGE") + "\n";
     }
  
     public String getMessage() {

@@ -1,0 +1,13 @@
+<h2>sling prop </h2>
+<!-- /* Access to JCR property */ -->
+  jcr title : ${properties.jcr:title}
+ </div>
+<!-- /* Access to page property */ -->
+   ${pageProperties.name}
+ </div>
+<!-- /* Access to inherited page property */ -->
+     Inherited Page Properties : ${inheritedPageProperties.inherited_property}
+
+</div>
+<!-- /* Visualize all accessible properties */ -->
+${properties}
