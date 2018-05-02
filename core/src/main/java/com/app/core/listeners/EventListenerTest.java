@@ -23,11 +23,11 @@ public class EventListenerTest implements EventListener {
 	private ObservationManager observationManager;
 
 	protected void activate(ComponentContext context) throws Exception {
-		session = repository.loginService(null, null);
+		session = repository.loginService("kunal_system", null);
 		observationManager = session.getWorkspace().getObservationManager();
-		observationManager.addEventListener(this, Event.PROPERTY_ADDED | Event.PROPERTY_CHANGED, "/", true, null, null,
-				true);
-		LOGGER.info("********added JCR event listener");
+		observationManager.addEventListener(this, Event.PROPERTY_ADDED | Event.PROPERTY_CHANGED, "/content/aem63/fr", true, null, 
+				new String[]{"cq:PageContent","nt:unstructured"} , true);
+		LOGGER.info("*************added JCR event listener");
 	}
 
 	protected void deactivate(ComponentContext componentContext) {

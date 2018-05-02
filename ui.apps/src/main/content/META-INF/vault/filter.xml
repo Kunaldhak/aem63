@@ -3,4 +3,5 @@
     <filter root="/apps/aem63"/>
     <filter root="/apps/sling" />
     <filter root="/etc/designs/aem63"/>
+    <filter root="/etc/clientlibs/clientlib-touch-ui-validation"/>
 </workspaceFilter>
